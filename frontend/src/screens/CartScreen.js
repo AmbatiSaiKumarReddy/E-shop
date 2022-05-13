@@ -37,6 +37,10 @@ const removeFromCartHandler=(id)=>{
 
 }
 
+const checkoutHandler=()=>{
+  history.push('/login?redirect=shipping')
+}
+
 
   return (
     <Row>
@@ -102,7 +106,7 @@ const removeFromCartHandler=(id)=>{
                           ${cartItems.reduce((acc,item)=>(item.qty*item.price)+acc,0).toFixed(2)}
                         </ListGroup.Item>
                         <ListGroup.Item>
-                          <Button type='button' disabled={cartItems.length===0}>
+                          <Button type='button' disabled={cartItems.length===0} onClick={checkoutHandler}>
                               Proceed to Check Out
                           </Button>
                         </ListGroup.Item>

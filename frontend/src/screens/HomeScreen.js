@@ -9,9 +9,11 @@ import { listProducts } from '../actions/productActions'
 const HomeScreen = () => {
   const dispatch = useDispatch()
 
+  console.log("---------------------")
   const productList = useSelector((state) => state.productList)
   const { loading, error, products } = productList
-
+  console.log(loading,error,products)
+  console.log("---------------------")
   useEffect(() => {
     dispatch(listProducts())
   }, [dispatch])
